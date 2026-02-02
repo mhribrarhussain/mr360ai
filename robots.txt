@@ -1,12 +1,12 @@
 # Mr360ai Robots.txt
-# https://mr360ai.com
+# https://mr360ai.netlify.app
 
 # Allow all crawlers
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://mr360ai.com/sitemap.xml
+Sitemap: https://mr360ai.netlify.app/sitemap.xml
 
 # Allow indexing of all public content
 # No restrictions on tools, blog, or main pages
