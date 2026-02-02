@@ -1,0 +1,20 @@
+# Mr360ai Robots.txt
+# https://mr360ai.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mr360ai.com/sitemap.xml
+
+# Allow indexing of all public content
+# No restrictions on tools, blog, or main pages
+
+# Block access to system/config files (if any exist)
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.env
+
+# Allow access to assets for proper rendering
+Allow: /assets/

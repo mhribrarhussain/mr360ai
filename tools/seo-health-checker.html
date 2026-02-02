@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free SEO Health Checker tool. Analyze your website's on-page SEO factors including title tags, meta descriptions, heading structure, image optimization, and more.">
+    <meta name="keywords" content="SEO checker, SEO health analyzer, on-page SEO tool, free SEO audit, website SEO analysis">
+    <meta name="author" content="Mr360ai">
+    <meta name="robots" content="index, follow">
+    
+    <title>Free SEO Health Checker - Analyze Your On-Page SEO | Mr360ai</title>
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="canonical" href="https://mr360ai.com/tools/seo-health-checker.html">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">M</div>
+                <span>Mr360ai</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link active">Tools</a></li>
+                    <li><a href="../blog/index.html" class="nav-link">Blog</a></li>
+                    <li><a href="../about.html" class="nav-link">About</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="content-header">
+            <div class="container">
+                <h1 class="content-header-title">SEO Health Checker</h1>
+                <p class="content-header-subtitle">Discover exactly what's helping or hurting your search rankings with our comprehensive on-page SEO analysis tool.</p>
+            </div>
+        </section>
+
+        <!-- Tool Section -->
+        <section class="section">
+            <div class="container">
+                <div class="tool-container" style="max-width: 900px; margin: 0 auto;">
+                    <div class="alert alert-info">
+                        <strong>How it works:</strong> Enter any website URL below. Our tool fetches your page and analyzes 10 critical on-page SEO factors, giving you actionable insights to improve your rankings.
+                    </div>
+                    
+                    <!-- Error Container -->
+                    <div id="error-container" class="alert alert-danger hidden">
+                        <strong>Error:</strong> <span id="error-message"></span>
+                    </div>
+                    
+                    <form id="seo-checker-form">
+                        <div class="tool-input-group">
+                            <label for="website-url" class="tool-label">Enter Your Website URL</label>
+                            <input type="url" id="website-url" name="website-url" class="tool-input" placeholder="https://yourwebsite.com" required>
+                            <p class="form-hint">Analyze any publicly accessible webpage for SEO issues</p>
+                        </div>
+                        
+                        <button type="submit" id="analyze-btn" class="btn btn-primary btn-lg btn-block">Analyze SEO Health</button>
+                    </form>
+                    
+                    <!-- Loading Indicator -->
+                    <div id="loading-indicator" class="hidden" style="text-align: center; padding: var(--spacing-2xl);">
+                        <div class="loading-spinner"></div>
+                        <p style="margin-top: var(--spacing-md); color: var(--body-text);">Analyzing your website's SEO...</p>
+                        <p style="font-size: var(--font-size-sm); color: var(--light-text);">Checking 10 critical ranking factors</p>
+                    </div>
+                    
+                    <!-- Results Section -->
+                    <div id="results-container" class="results-container hidden">
+                        <div id="score-display" class="score-display">
+                            <p style="margin-bottom: var(--spacing-md); font-size: var(--font-size-sm); color: var(--light-text);">
+                                Analyzed: <a id="analyzed-url" href="#" target="_blank" rel="noopener noreferrer"></a>
+                            </p>
+                            <div id="score-circle" class="score-circle">
+                                <span id="score-number" class="score-number">0</span>
+                                <span class="score-label">/ 100</span>
+                            </div>
+                            <h3 id="score-status" class="score-status"></h3>
+                            <p id="score-summary"></p>
+                        </div>
+                        
+                        <h3>Detailed SEO Analysis</h3>
+                        <ul id="check-list" class="check-list"></ul>
+                        
+                        <div class="alert alert-info mt-2">
+                            <strong>Next Step:</strong> Fix the issues above, then re-analyze your page. For deeper insights, read our guide on <a href="../blog/seo-adsense-guide.html">How On-Page SEO Affects AdSense Approval</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Content -->
+        <section class="section bg-light">
+            <div class="container">
+                <article class="content-body" style="max-width: 900px;">
+                    <h2 style="border: none; padding-top: 0; margin-top: 0;">Why On-Page SEO Still Matters in 2024</h2>
+                    <p>There's a persistent myth in digital marketing circles that on-page SEO is "dead" or no longer relevant. Nothing could be further from the truth. While Google's algorithms have evolved dramatically over the past decade, the fundamental principles of on-page optimization remain the foundation upon which all other SEO efforts are built. In fact, with Google's increasing focus on user experience signals, proper on-page SEO has become more important than ever.</p>
+                    
+                    <p>Think about it this way: even if you have the best backlink profile in your industry, if your pages don't communicate their topic clearly to search engines, you're leaving significant ranking potential on the table. On-page SEO is essentially your way of speaking Google's language, helping the search engine understand exactly what your content is about and why it should rank for specific queries.</p>
+                    
+                    <p>Our SEO Health Checker analyzes the technical elements that Google's crawlers evaluate when they visit your pages. These elements work together to form a complete picture of your page's topic, relevance, and quality. Let's explore each factor in detail.</p>
+
+                    <h2>Understanding the 10 Critical SEO Factors We Analyze</h2>
+                    
+                    <h3>1. Title Tags: Your First Impression in Search Results</h3>
+                    <p>The title tag might be the single most important on-page SEO element. It appears in browser tabs, search results, and when your page is shared on social media. But beyond visibility, it serves a crucial role in helping Google understand your page's primary topic.</p>
+                    
+                    <p>Through years of testing and analysis, SEO professionals have established that the optimal title tag length falls between 50-60 characters. Titles shorter than this often fail to capture the full topic, while longer titles get truncated in search results, potentially cutting off important information. More importantly, titles should include the primary keyword you're targeting, ideally near the beginning where it carries the most weight.</p>
+                    
+                    <p>What many website owners overlook is that title tags serve dual purposes: they must be optimized for search engines while remaining compelling enough to encourage clicks. A perfectly optimized title that no one wants to click is ultimately useless.</p>
+
+                    <h3>2. Meta Descriptions: Your Search Result Sales Pitch</h3>
+                    <p>While meta descriptions don't directly influence rankings—Google has confirmed this multiple times—they significantly impact click-through rates. And click-through rates do influence rankings indirectly. When users consistently click on your result over competitors, Google takes notice.</p>
+                    
+                    <p>The ideal meta description runs between 150-160 characters. Anything longer gets truncated with an ellipsis, which can undermine your message at the worst possible moment. Your meta description should summarize the page's value proposition, include a call to action, and feature relevant keywords (which Google bolds when they match the search query).</p>
+
+                    <h3>3. H1 Headings: Confirming Your Topic</h3>
+                    <p>The H1 tag is your page's primary heading, and it should exist exactly once per page. This heading reinforces the topic established by your title tag and provides the first major content signal that users see upon landing on your page.</p>
+                    
+                    <p>A common mistake is having multiple H1 tags on a single page, which confuses the topic hierarchy and dilutes your primary keyword focus. Another mistake is having an H1 that dramatically differs from the title tag, which can create a jarring disconnect for both users and search engines.</p>
+
+                    <h3>4. Heading Hierarchy: Organizing Your Content</h3>
+                    <p>Beyond the H1, your use of H2, H3, and subsequent heading levels tells Google how your content is structured. Think of headings as an outline: H2s are main sections, H3s are subsections, and so on. This hierarchy helps both users and search engines navigate your content efficiently.</p>
+                    
+                    <p>Pages with well-organized heading structures tend to rank better for featured snippets because Google can easily identify distinct sections to potentially feature. They also improve accessibility for screen readers, which is increasingly important for modern SEO.</p>
+
+                    <h3>5. Image Alt Attributes: Accessibility Meets SEO</h3>
+                    <p>Alt attributes were originally designed to describe images for visually impaired users who rely on screen readers. However, they've become important SEO elements because they help Google understand image content—something the search engine is still learning to do visually.</p>
+                    
+                    <p>Every image on your page should have a descriptive alt attribute that explains what the image shows. This isn't just good SEO practice; it's a legal requirement for accessibility compliance in many jurisdictions. Our tool checks what percentage of your images have proper alt text.</p>
+
+                    <h3>6. Internal Links: Building Your Site's Architecture</h3>
+                    <p>Internal links are the pathways that connect your pages together. They help Google discover new content, understand the relationship between pages, and distribute PageRank throughout your site. A page with few internal links is often seen as less important than well-connected pages.</p>
+                    
+                    <p>Strong internal linking also keeps users on your site longer, reducing bounce rates and increasing pages per session—both positive engagement signals that Google monitors. Our tool counts your internal links to ensure you're building a well-connected site structure.</p>
+
+                    <h3>7. External Links: Referencing Authoritative Sources</h3>
+                    <p>Linking out to authoritative external sources signals to Google that you're providing well-researched content. While some worry about "leaking" PageRank, the SEO community has largely concluded that strategic external linking builds trust and credibility.</p>
+                    
+                    <p>The key word is "strategic." Linking to low-quality or irrelevant sites can harm your reputation, while linking to recognized authorities in your field demonstrates expertise. However, excessive external links can also be problematic, potentially diluting your content's focus.</p>
+
+                    <h3>8. HTTPS Security: A Non-Negotiable Ranking Factor</h3>
+                    <p>Since 2014, Google has explicitly stated that HTTPS is a ranking signal. More importantly, browsers now display prominent "Not Secure" warnings for sites without SSL certificates, which devastates user trust and conversion rates.</p>
+                    
+                    <p>If your site isn't using HTTPS, this should be your top priority. Most hosting providers offer free SSL certificates through Let's Encrypt, and the migration process is straightforward. There's simply no excuse for operating an insecure website in 2024.</p>
+
+                    <h3>9. Mobile Viewport: Essential for Mobile-First Indexing</h3>
+                    <p>Google moved to mobile-first indexing in 2019, meaning the mobile version of your website is what Google primarily uses for ranking and indexing. The viewport meta tag is essential for proper mobile rendering, telling browsers how to scale your page for different devices.</p>
+                    
+                    <p>Without a properly configured viewport, your site may appear tiny and unreadable on mobile devices, leading to high bounce rates and poor user experience—signals that Google interprets negatively.</p>
+
+                    <h3>10. Canonical Tags: Preventing Duplicate Content Issues</h3>
+                    <p>Canonical tags tell Google which version of a page is the "official" one. This prevents duplicate content issues that can arise from URL parameters, www vs. non-www versions, or HTTP vs. HTTPS versions of the same page.</p>
+                    
+                    <p>Without canonical tags, Google might index multiple versions of your pages, dividing the ranking power between them rather than consolidating it to a single URL.</p>
+
+                    <h2>How to Use Your SEO Health Score</h2>
+                    <p>Our tool calculates a score from 0-100 based on how well your page performs across these 10 factors. Here's how to interpret your results:</p>
+                    
+                    <ul>
+                        <li><strong>80-100 (Green):</strong> Your on-page SEO fundamentals are solid. Focus on content quality, backlinks, and user experience for further gains.</li>
+                        <li><strong>60-79 (Yellow):</strong> Good foundation with notable gaps. Address the flagged issues to unlock better ranking potential.</li>
+                        <li><strong>0-59 (Red):</strong> Significant issues detected. These problems are likely holding back your rankings and should be prioritized immediately.</li>
+                    </ul>
+                    
+                    <p>Remember that on-page SEO is just one piece of the ranking puzzle. A perfect score doesn't guarantee top rankings, but it ensures you're not sabotaging your efforts with preventable technical issues. For more on how SEO relates to monetization, read our guide on <a href="../blog/seo-adsense-guide.html">How On-Page SEO Affects AdSense Approval</a>.</p>
+
+                    <h2>Common On-Page SEO Mistakes to Avoid</h2>
+                    <p><strong>Keyword stuffing:</strong> Overusing keywords in titles, headings, or content makes pages read unnaturally and can trigger spam filters. Focus on writing for humans first.</p>
+                    
+                    <p><strong>Ignoring user intent:</strong> Your page should match what users actually want when they search. If someone searches "how to bake bread" and lands on a page selling bread machines, they'll bounce immediately.</p>
+                    
+                    <p><strong>Thin content:</strong> Pages with minimal content struggle to rank because they don't provide sufficient value. Aim for comprehensive coverage of your topic.</p>
+                    
+                    <p><strong>Slow page speed:</strong> While our tool focuses on HTML factors, page speed is critical for rankings. Compress images, minimize code, and use a fast hosting provider.</p>
+                    
+                    <p><strong>Poor mobile experience:</strong> Beyond the viewport meta tag, ensure your entire design works on mobile devices. Test on real phones, not just browser simulators.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="section">
+            <div class="container text-center">
+                <h2>Explore More Tools</h2>
+                <p style="max-width: 600px; margin: 0 auto var(--spacing-xl);">Comprehensive tools to help you succeed online</p>
+                
+                <div class="feature-grid" style="max-width: 900px; margin: 0 auto;">
+                    <a href="adsense-readiness-checker.html" class="card" style="text-decoration: none;">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">AdSense Checker</h3>
+                        <p class="card-text">Check if your site is ready for Google AdSense approval.</p>
+                    </a>
+                    <a href="content-humanizer.html" class="card" style="text-decoration: none;">
+                        <div class="card-icon">✍️</div>
+                        <h3 class="card-title">Content Humanizer</h3>
+                        <p class="card-text">Transform AI-generated text into natural, human-like content.</p>
+                    </a>
+                    <a href="low-value-content-analyzer.html" class="card" style="text-decoration: none;">
+                        <div class="card-icon">🔍</div>
+                        <h3 class="card-title">Content Analyzer</h3>
+                        <p class="card-text">Identify low-value content issues before Google does.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section class="section bg-blue-light">
+            <div class="container text-center">
+                <h2>Important Note</h2>
+                <p style="max-width: 800px; margin: 0 auto;">This tool provides educational SEO insights based on commonly accepted best practices. SEO is complex and constantly evolving. While these factors are important, many other elements influence rankings including content quality, backlinks, user behavior, and factors only Google knows. Use this tool as a starting point, not the final word on your SEO strategy.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">
+                    <div class="logo-icon">M</div>
+                    <span>Mr360ai</span>
+                </a>
+                <p class="footer-description">Premium digital tools made accessible to everyone. Our mission is to democratize access to professional-grade tools that help you succeed online.</p>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="adsense-readiness-checker.html">AdSense Checker</a></li>
+                    <li><a href="seo-health-checker.html">SEO Checker</a></li>
+                    <li><a href="content-humanizer.html">Content Humanizer</a></li>
+                    <li><a href="low-value-content-analyzer.html">Content Analyzer</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="../blog/index.html">Blog</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms & Conditions</a></li>
+                    <li><a href="../disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Mr360ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/seo-checker.js"></script>
+</body>
+</html>

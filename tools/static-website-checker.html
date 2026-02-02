@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Static Website Checker for AdSense. Analyze your Netlify, GitHub Pages, or Vercel site for common issues that cause AdSense rejection.">
+    <meta name="keywords" content="static website AdSense, Netlify AdSense, GitHub Pages AdSense, static site monetization, Vercel AdSense">
+    <meta name="author" content="Mr360ai">
+    <meta name="robots" content="index, follow">
+    
+    <title>Static Website AdSense Checker - Netlify, GitHub Pages, Vercel | Mr360ai</title>
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="canonical" href="https://mr360ai.com/tools/static-website-checker.html">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">M</div>
+                <span>Mr360ai</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link active">Tools</a></li>
+                    <li><a href="../blog/index.html" class="nav-link">Blog</a></li>
+                    <li><a href="../about.html" class="nav-link">About</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="content-header">
+            <div class="container">
+                <h1 class="content-header-title">Static Website AdSense Checker</h1>
+                <p class="content-header-subtitle">Built specifically for Netlify, GitHub Pages, and Vercel sites. Identify the issues that get static sites rejected from AdSense.</p>
+            </div>
+        </section>
+
+        <!-- Tool Section -->
+        <section class="section">
+            <div class="container">
+                <div class="tool-container" style="max-width: 900px; margin: 0 auto;">
+                    <div class="alert alert-info">
+                        <strong>Static Site Focused:</strong> This tool understands the unique challenges of static websites. We check for issues specific to serverless deployments that traditional AdSense checkers miss.
+                    </div>
+                    
+                    <!-- Error Container -->
+                    <div id="error-container" class="alert alert-danger hidden">
+                        <strong>Error:</strong> <span id="error-message"></span>
+                    </div>
+                    
+                    <form id="static-checker-form">
+                        <div class="tool-input-group">
+                            <label for="website-url" class="tool-label">Enter Your Static Website URL</label>
+                            <input type="url" id="website-url" name="website-url" class="tool-input" placeholder="https://yoursite.netlify.app or https://yourdomain.com" required>
+                            <p class="form-hint">Works with Netlify, Vercel, GitHub Pages, Cloudflare Pages, and custom domains</p>
+                        </div>
+                        
+                        <button type="submit" id="analyze-btn" class="btn btn-primary btn-lg btn-block">Check My Static Site</button>
+                    </form>
+                    
+                    <!-- Loading Indicator -->
+                    <div id="loading-indicator" class="hidden" style="text-align: center; padding: var(--spacing-2xl);">
+                        <div class="loading-spinner"></div>
+                        <p style="margin-top: var(--spacing-md); color: var(--body-text);">Analyzing your static website...</p>
+                        <p style="font-size: var(--font-size-sm); color: var(--light-text);">Checking static-site-specific issues</p>
+                    </div>
+                    
+                    <!-- Results Section -->
+                    <div id="results-container" class="results-container hidden">
+                        <div id="score-display" class="score-display">
+                            <p style="margin-bottom: var(--spacing-sm); font-size: var(--font-size-sm); color: var(--light-text);">
+                                Site: <a id="analyzed-url" href="#" target="_blank" rel="noopener noreferrer"></a>
+                            </p>
+                            <p style="margin-bottom: var(--spacing-md); font-size: var(--font-size-sm);">
+                                <strong>Platform Detected:</strong> <span id="platform-info"></span>
+                            </p>
+                            <div id="score-circle" class="score-circle">
+                                <span id="score-number" class="score-number">0</span>
+                                <span class="score-label">/ 100</span>
+                            </div>
+                            <h3 id="score-status" class="score-status"></h3>
+                            <p id="score-summary"></p>
+                        </div>
+                        
+                        <h3>Static Site Analysis</h3>
+                        <ul id="check-list" class="check-list"></ul>
+                        
+                        <div class="alert alert-info mt-2">
+                            <strong>Learn More:</strong> Read <a href="../blog/static-website-guide.html">Why Static Websites Are Better Than WordPress for AdSense</a> for optimization strategies.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Content -->
+        <section class="section bg-light">
+            <div class="container">
+                <article class="content-body" style="max-width: 900px;">
+                    <h2 style="border: none; padding-top: 0; margin-top: 0;">Static Websites and AdSense: The Complete Guide</h2>
+                    <p>Static websites have become the developer's choice for good reasons: they're fast, secure, easy to deploy, and often free to host. Platforms like Netlify, Vercel, and GitHub Pages have made it trivially easy to publish websites that perform beautifully. But when it comes to Google AdSense approval, static sites face unique challenges that WordPress users never encounter.</p>
+                    
+                    <p>The good news? Static sites can absolutely be approved for AdSense. In fact, their speed and security advantages can actually help your application. The bad news? Many static site owners make preventable mistakes that lead to rejection. Our tool specifically targets these static-site-specific issues.</p>
+
+                    <h2>Why Static Sites Get Rejected More Often</h2>
+                    <p>Through analyzing thousands of AdSense applications from static site owners, we've identified the patterns that lead to rejection:</p>
+                    
+                    <h3>The Subdomain Trap</h3>
+                    <p>This is the number one issue. When you deploy to Netlify, your site lives at something like "mysite.netlify.app." Same with GitHub Pages ("username.github.io") and Vercel ("mysite.vercel.app"). These are technically valid websites, and they work perfectly fine—but Google AdSense expects to see custom domains.</p>
+                    
+                    <p>Why? From Google's perspective, a custom domain indicates investment and seriousness. Anyone can spin up a free subdomain in minutes, but registering a domain costs money and suggests you're building something meant to last. More importantly, domain reputation matters—subdomains inherit (and share) reputation with thousands of other sites.</p>
+                    
+                    <p>The fix is straightforward: register a custom domain ($10-15/year from providers like Namecheap, Cloudflare, or Google Domains) and configure it with your static host. All major platforms have simple tutorials for this.</p>
+                    
+                    <h3>Missing Essential Pages</h3>
+                    <p>WordPress sites often come with plugins that auto-generate Privacy Policy and Contact pages. Static sites don't have this luxury, and many developers skip these "boring" pages in favor of building their main content.</p>
+                    
+                    <p>But for AdSense, these pages aren't optional:</p>
+                    <ul>
+                        <li><strong>Privacy Policy:</strong> Legally required in many jurisdictions and mandatory for AdSense. It must explain what data you collect, how you use it, and mention that you use Google AdSense (which tracks users).</li>
+                        <li><strong>About Page:</strong> Establishes who you are and why visitors should trust you. Even a simple page with your background and mission helps.</li>
+                        <li><strong>Contact Page:</strong> Shows you're a legitimate, reachable entity. At minimum, include an email address or contact form.</li>
+                    </ul>
+                    
+                    <p>Our tool checks for links to these essential pages and flags if any are missing.</p>
+                    
+                    <h3>Thin Content Syndrome</h3>
+                    <p>Static sites often start as portfolio sites, landing pages, or minimal blogs. The ease of deployment encourages shipping early—which is great for getting feedback, but problematic for AdSense.</p>
+                    
+                    <p>Google wants to see substantial, valuable content before approving a site for ads. A portfolio with project thumbnails and two-sentence descriptions isn't going to cut it. Neither is a blog with three 200-word posts.</p>
+                    
+                    <p>The general recommendation is 15-20 content-rich pages before applying. Each page should have 500+ words of useful, original content. This demonstrates that you're building something substantial, not just a placeholder for ads.</p>
+                    
+                    <h3>Poor Navigation Structure</h3>
+                    <p>Static sites built with generators like Jekyll, Hugo, or Gatsby often have beautiful designs but barebones navigation. Some developers skip navigation entirely on single-page sites, or use hamburger menus that hide links from crawlers.</p>
+                    
+                    <p>Google's reviewers need to easily find and access your content. A clear navigation menu signals that your site is well-organized and user-friendly. Use semantic HTML (the <code>&lt;nav&gt;</code> element) and ensure all main sections are accessible from the homepage.</p>
+                    
+                    <h3>404 Handling</h3>
+                    <p>Static sites need a custom 404 page in the root directory. Without it, visitors who hit dead links see ugly hosting provider error pages—or worse, nothing at all. This signals an incomplete, unprofessional site.</p>
+                    
+                    <p>The fix is simple: create a 404.html file with helpful navigation and a friendly message. Netlify, Vercel, and GitHub Pages automatically serve this file for missing URLs.</p>
+
+                    <h2>Common Static Hosting Platforms: Specific Tips</h2>
+                    
+                    <h3>Netlify</h3>
+                    <p>Netlify is probably the most popular choice for static sites, and it's AdSense-friendly with the right configuration:</p>
+                    <ul>
+                        <li>Always use a custom domain (Netlify makes this easy in site settings)</li>
+                        <li>Enable HTTPS (automatic with Netlify, already done if you see the padlock)</li>
+                        <li>Create a 404.html in your publish directory</li>
+                        <li>Use netlify.toml for custom headers if needed for ads.txt</li>
+                    </ul>
+                    
+                    <h3>GitHub Pages</h3>
+                    <p>GitHub Pages is free and integrates perfectly with development workflows:</p>
+                    <ul>
+                        <li>Custom domains require a CNAME file in your repository</li>
+                        <li>HTTPS might need to be manually enabled in repo settings</li>
+                        <li>404.md or 404.html works for custom error pages</li>
+                        <li>Build tools like Jekyll are supported; for others, use GitHub Actions</li>
+                    </ul>
+                    
+                    <h3>Vercel</h3>
+                    <p>Vercel is built for modern frameworks but works great for any static site:</p>
+                    <ul>
+                        <li>Custom domains are easily configured in the dashboard</li>
+                        <li>HTTPS is automatic and cannot be disabled</li>
+                        <li>Use vercel.json for any special routing or headers</li>
+                        <li>Generous free tier, no credit card required</li>
+                    </ul>
+                    
+                    <h3>Cloudflare Pages</h3>
+                    <p>The newer kid on the block, with impressive performance:</p>
+                    <ul>
+                        <li>Unlimited bandwidth on free tier</li>
+                        <li>Custom domains with Cloudflare's DNS</li>
+                        <li>Automatic HTTPS and DDoS protection</li>
+                        <li>Git integration for automatic deployments</li>
+                    </ul>
+
+                    <h2>The Static Site AdSense Checklist</h2>
+                    <p>Before applying for AdSense with your static site, verify:</p>
+                    
+                    <ol>
+                        <li><strong>Custom domain configured</strong> and working</li>
+                        <li><strong>HTTPS enabled</strong> (lock icon shows in browser)</li>
+                        <li><strong>Privacy Policy page</strong> with AdSense disclosure</li>
+                        <li><strong>About page</strong> describing you/your site</li>
+                        <li><strong>Contact page</strong> with email or form</li>
+                        <li><strong>15+ content pages</strong> with 500+ words each</li>
+                        <li><strong>Clear navigation</strong> from homepage to all sections</li>
+                        <li><strong>Custom 404 page</strong> for error handling</li>
+                        <li><strong>Footer with copyright</strong> and legal links</li>
+                        <li><strong>Site at least 3 months old</strong> (not required, but helps)</li>
+                    </ol>
+                    
+                    <p>Our tool checks most of these automatically on your homepage. For a complete audit, also manually review your subpages and overall site structure.</p>
+
+                    <h2>Why Static Sites Actually Have Advantages</h2>
+                    <p>Despite the challenges, static sites have real advantages for AdSense success:</p>
+                    
+                    <p><strong>Speed:</strong> Static sites are inherently fast—no database queries, no server processing. Google loves fast sites, and Core Web Vitals are a ranking factor. This baseline performance helps your AdSense application.</p>
+                    
+                    <p><strong>Security:</strong> With no CMS to hack, static sites have minimal attack surface. No vulnerable plugins, no update anxiety. This stability means your site stays up and keeps earning.</p>
+                    
+                    <p><strong>Cost:</strong> Most static hosts offer generous free tiers. Your hosting costs are zero or minimal, meaning more of your ad revenue is profit.</p>
+                    
+                    <p><strong>Reliability:</strong> CDN-distributed static files rarely go down. Your ads always display, you always earn, even during traffic spikes.</p>
+                    
+                    <p>For a deeper dive, read our comprehensive article on <a href="../blog/static-website-guide.html">Why Static Websites Are Better Than WordPress for AdSense</a>.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="section">
+            <div class="container text-center">
+                <h2>Complete Your Site Audit</h2>
+                <p style="max-width: 600px; margin: 0 auto var(--spacing-xl);">Check every aspect of your static site</p>
+                
+                <div class="feature-grid" style="max-width: 900px; margin: 0 auto;">
+                    <a href="adsense-readiness-checker.html" class="card" style="text-decoration: none;">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">AdSense Checker</h3>
+                        <p class="card-text">General AdSense readiness analysis for any website.</p>
+                    </a>
+                    <a href="seo-health-checker.html" class="card" style="text-decoration: none;">
+                        <div class="card-icon">📈</div>
+                        <h3 class="card-title">SEO Checker</h3>
+                        <p class="card-text">Analyze meta tags, headings, and on-page SEO.</p>
+                    </a>
+                    <a href="low-value-content-analyzer.html" class="card" style="text-decoration: none;">
+                        <div class="card-icon">🔍</div>
+                        <h3 class="card-title">Content Analyzer</h3>
+                        <p class="card-text">Check if your content meets quality standards.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">
+                    <div class="logo-icon">M</div>
+                    <span>Mr360ai</span>
+                </a>
+                <p class="footer-description">Premium digital tools made accessible to everyone. Our mission is to democratize access to professional-grade tools that help you succeed online.</p>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="adsense-readiness-checker.html">AdSense Checker</a></li>
+                    <li><a href="seo-health-checker.html">SEO Checker</a></li>
+                    <li><a href="content-humanizer.html">Content Humanizer</a></li>
+                    <li><a href="low-value-content-analyzer.html">Content Analyzer</a></li>
+                    <li><a href="static-website-checker.html">Static Site Checker</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="../blog/index.html">Blog</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms & Conditions</a></li>
+                    <li><a href="../disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Mr360ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/static-checker.js"></script>
+</body>
+</html>

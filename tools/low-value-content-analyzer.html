@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Low-Value Content Analyzer. Check if your content might be flagged as thin or low-quality by Google. Get actionable recommendations to improve content quality.">
+    <meta name="keywords" content="low value content, thin content checker, content quality analyzer, Google content guidelines, AdSense content requirements">
+    <meta name="author" content="Mr360ai">
+    <meta name="robots" content="index, follow">
+    
+    <title>Low-Value Content Analyzer - Check Content Quality Free | Mr360ai</title>
+    
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="canonical" href="https://mr360ai.com/tools/low-value-content-analyzer.html">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">M</div>
+                <span>Mr360ai</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html" class="nav-link active">Tools</a></li>
+                    <li><a href="../blog/index.html" class="nav-link">Blog</a></li>
+                    <li><a href="../about.html" class="nav-link">About</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="content-header">
+            <div class="container">
+                <h1 class="content-header-title">Low-Value Content Analyzer</h1>
+                <p class="content-header-subtitle">Discover if your content shows the warning signs that Google considers "low-value" before it hurts your rankings.</p>
+            </div>
+        </section>
+
+        <!-- Tool Section -->
+        <section class="section">
+            <div class="container">
+                <div class="tool-container" style="max-width: 900px; margin: 0 auto;">
+                    <div class="alert alert-info">
+                        <strong>How it works:</strong> Paste your content below (at least 100 words). We analyze 8 quality signals that Google uses to identify thin or low-value content, giving you specific improvement recommendations.
+                    </div>
+                    
+                    <!-- Error Container -->
+                    <div id="error-container" class="alert alert-danger hidden">
+                        <strong>Error:</strong> <span id="error-message"></span>
+                    </div>
+                    
+                    <form id="analyzer-form">
+                        <div class="tool-input-group">
+                            <label for="input-text" class="tool-label">Paste Your Content</label>
+                            <textarea id="input-text" name="input-text" class="tool-input tool-textarea" placeholder="Paste the article, blog post, or page content you want to analyze. Include the full text without HTML tags..." required style="min-height: 250px;"></textarea>
+                            <p class="form-hint"><span id="word-count">0</span> words (minimum 100 required for analysis)</p>
+                        </div>
+                        
+                        <button type="submit" id="analyze-btn" class="btn btn-primary btn-lg btn-block">Analyze Content Quality</button>
+                    </form>
+                    
+                    <!-- Results Section -->
+                    <div id="results-container" class="results-container hidden">
+                        <div id="score-display" class="score-display">
+                            <div id="score-circle" class="score-circle">
+                                <span id="score-number" class="score-number">0</span>
+                                <span class="score-label">/ 100</span>
+                            </div>
+                            <h3 id="score-status" class="score-status"></h3>
+                            <p id="score-summary"></p>
+                        </div>
+                        
+                        <h3>Quality Analysis Breakdown</h3>
+                        <ul id="check-list" class="check-list"></ul>
+                        
+                        <div class="alert alert-info mt-2">
+                            <strong>Want to improve?</strong> Read our comprehensive guide on <a href="../blog/low-value-content-guide.html">What Google Means by Low-Value Content</a> for detailed strategies.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Content -->
+        <section class="section bg-light">
+            <div class="container">
+                <article class="content-body" style="max-width: 900px;">
+                    <h2 style="border: none; padding-top: 0; margin-top: 0;">The Dreaded "Low-Value Content" Problem</h2>
+                    <p>If you've applied for Google AdSense or watched your site's rankings decline, you may have encountered a term that strikes fear into content creators: "low-value content." It's one of the most common—and most frustrating—reasons for AdSense rejection and poor search performance. But what exactly makes content "low-value" in Google's eyes?</p>
+                    
+                    <p>The challenge is that Google never provides a precise checklist. They speak in generalities about "helpful content" and "content created for users, not search engines." This vagueness leaves many website owners confused, wondering why their carefully written articles aren't meeting Google's standards.</p>
+                    
+                    <p>After analyzing thousands of pages that have been flagged for low-value content issues, we've identified the specific patterns that correlate with quality problems. Our analyzer checks your content against these patterns, giving you visibility into issues before Google penalizes you for them.</p>
+
+                    <h2>What Makes Content "Low-Value" to Google?</h2>
+                    <p>Google's perspective on content quality comes from a simple question: does this content genuinely help the person who found it? If someone searches for "how to fix a leaky faucet" and lands on your page, will they leave with the knowledge and confidence to actually fix their faucet? Or will they hit the back button and try another result?</p>
+                    
+                    <p>Low-value content fails this test in various ways. Let's explore the specific signals our tool analyzes:</p>
+                    
+                    <h3>Insufficient Depth</h3>
+                    <p>Thin content is content that doesn't provide enough information to genuinely help readers. A 200-word article on "how to invest in stocks" cannot possibly cover the topic adequately. Readers will leave unsatisfied, Google will notice the high bounce rate, and your rankings will suffer.</p>
+                    
+                    <p>Our tool checks your word count against what's appropriate for your topic. For most informational content, 800+ words is a reasonable baseline, though some topics require 2,000+ words for comprehensive coverage. The key isn't hitting a specific number—it's covering your topic thoroughly enough that readers don't need to look elsewhere.</p>
+                    
+                    <h3>Robotic, Uniform Writing</h3>
+                    <p>Content that reads like it was generated by a machine—or by a human being unnaturally mechanical—raises red flags. One tell-tale sign is uniform sentence length. When every sentence is roughly the same length, the writing feels unnatural and tedious to read.</p>
+                    
+                    <p>Good writing has rhythm. Short sentences create emphasis. Longer sentences allow for nuance and complexity, building ideas gradually across multiple clauses. Our analyzer measures sentence length variety to identify content that lacks this natural rhythm.</p>
+                    
+                    <h3>Wall-of-Text Syndrome</h3>
+                    <p>Even great content becomes low-value if it's presented as an impenetrable wall of text. Readers scan before they read, and massive paragraphs signal "this will be hard to read" before anyone engages with your ideas.</p>
+                    
+                    <p>Our tool checks paragraph structure, looking for content that needs better visual organization. Short paragraphs (3-5 sentences), frequent headings, and strategic use of lists all improve readability—and reader satisfaction.</p>
+                    
+                    <h3>Vocabulary Poverty</h3>
+                    <p>Repetitive vocabulary is another signal of low-quality content. When the same words appear over and over, readers notice—consciously or unconsciously—that the writing feels redundant. More importantly, it often reflects shallow thinking. Rich, varied vocabulary suggests the author genuinely understands their topic and can discuss it from multiple angles.</p>
+                    
+                    <p>Our analyzer calculates lexical density, comparing your unique words to total words. Content with low lexical density often needs revision to introduce synonyms and varied phrasing.</p>
+                    
+                    <h3>Keyword Stuffing Residue</h3>
+                    <p>Even if you're not deliberately stuffing keywords, your content may show patterns that look like keyword stuffing to Google. Certain words or phrases that repeat excessively throughout the text suggest that the content was written for search engines rather than humans.</p>
+                    
+                    <p>Our tool identifies overused terms, helping you spot unintentional repetition that might trigger spam signals.</p>
+                    
+                    <h3>Filler Word Overload</h3>
+                    <p>Words like "very," "really," "actually," "basically," and "literally" often add nothing to meaning. They're verbal tics that creep into writing, padding out sentences without adding value. Content heavy with filler words reads as unfocused and uncertain.</p>
+                    
+                    <p>We count filler words and calculate their proportion of your total content, flagging when you've crossed into excessive territory.</p>
+                    
+                    <h3>Missing Engagement Elements</h3>
+                    <p>High-quality content engages readers through various techniques: rhetorical questions that prompt thinking, specific numbers and data points that add credibility, quotes from experts, and lists that organize information clearly. Content lacking these elements often feels flat and unengaging.</p>
+                    
+                    <p>Our analyzer checks for the presence of these engagement signals, identifying content that might benefit from more dynamic presentation.</p>
+                    
+                    <h3>Lack of Specificity</h3>
+                    <p>Generic advice without specific details often signals low-value content. "Exercise is good for you" is vague. "A 2023 Harvard study found that 30 minutes of walking daily reduces heart disease risk by 23%" is specific and credible.</p>
+                    
+                    <p>We look for specificity signals—percentages, dates, proper nouns, exact figures—that indicate well-researched, authoritative content.</p>
+
+                    <h2>Beyond the Numbers: What Our Tool Cannot Measure</h2>
+                    <p>Transparency matters to us. While our analyzer identifies many low-value content signals, some quality factors cannot be measured algorithmically:</p>
+                    
+                    <p><strong>Originality:</strong> We cannot determine if your content is genuinely original or rehashed from other sources. Google, however, can—and heavily penalizes content that doesn't add new value to existing information.</p>
+                    
+                    <p><strong>Accuracy:</strong> We cannot fact-check your claims. Content full of misinformation is low-value regardless of how well it scores on our metrics.</p>
+                    
+                    <p><strong>User Intent Match:</strong> We cannot evaluate whether your content matches what searchers are actually looking for. A beautifully written article that doesn't answer the searcher's question is still low-value to that searcher.</p>
+                    
+                    <p><strong>Authority Signals:</strong> We cannot assess your expertise or credentials. Google increasingly values content from demonstrable experts, especially in YMYL (Your Money, Your Life) topics.</p>
+                    
+                    <p>Use our tool as one input in your quality assessment, not the final word. Combine it with honest self-evaluation, competitor analysis, and user feedback for a complete picture.</p>
+
+                    <h2>How to Fix Low-Value Content</h2>
+                    <p>If our analyzer flags issues, here's how to address them:</p>
+                    
+                    <p><strong>For thin content:</strong> Don't just add words—add value. Research your topic more deeply. Include examples, case studies, and practical applications. Answer related questions readers might have.</p>
+                    
+                    <p><strong>For uniform sentences:</strong> Read your content aloud. Where it feels monotonous, break up patterns. Follow long sentences with short ones. Use fragments occasionally. Create rhythm.</p>
+                    
+                    <p><strong>For poor structure:</strong> Add subheadings every 200-300 words. Break long paragraphs. Use bullet points and numbered lists where appropriate. Make your content scannable.</p>
+                    
+                    <p><strong>For repetitive vocabulary:</strong> Use a thesaurus strategically. Find different ways to express the same concepts. This often leads to deeper thinking about your topic.</p>
+                    
+                    <p><strong>For missing engagement:</strong> Add a question that invites reader reflection. Include a specific statistic from a credible source. Quote an expert. Create a list of actionable steps.</p>
+                    
+                    <p>For comprehensive strategies, read our guide on <a href="../blog/low-value-content-guide.html">What Google Means by Low-Value Content</a>.</p>
+
+                    <h2>The Bigger Picture: Quality as a Strategy</h2>
+                    <p>Fixing low-value content isn't just about passing an algorithm's test—it's about building a website that genuinely serves your audience. When you create content that thoroughly helps readers, everything else follows: they stay longer, share more, return often, and trust your recommendations.</p>
+                    
+                    <p>Google's increasing sophistication at detecting quality means there are no shortcuts. The only sustainable strategy is creating content you'd genuinely recommend to a friend. Use our tool to identify technical issues, but never lose sight of the fundamental question: is this content truly helpful?</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Related Tools -->
+        <section class="section">
+            <div class="container text-center">
+                <h2>Complete Your Content Analysis</h2>
+                <p style="max-width: 600px; margin: 0 auto var(--spacing-xl);">Use our full suite of tools to optimize your content</p>
+                
+                <div class="feature-grid" style="max-width: 900px; margin: 0 auto;">
+                    <a href="content-humanizer.html" class="card" style="text-decoration: none;">
+                        <div class="card-icon">✍️</div>
+                        <h3 class="card-title">Content Humanizer</h3>
+                        <p class="card-text">Make AI-generated content sound natural and authentic.</p>
+                    </a>
+                    <a href="seo-health-checker.html" class="card" style="text-decoration: none;">
+                        <div class="card-icon">📈</div>
+                        <h3 class="card-title">SEO Checker</h3>
+                        <p class="card-text">Analyze on-page SEO factors for better rankings.</p>
+                    </a>
+                    <a href="adsense-readiness-checker.html" class="card" style="text-decoration: none;">
+                        <div class="card-icon">💰</div>
+                        <h3 class="card-title">AdSense Checker</h3>
+                        <p class="card-text">Verify your site is ready for AdSense approval.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="../index.html" class="footer-logo">
+                    <div class="logo-icon">M</div>
+                    <span>Mr360ai</span>
+                </a>
+                <p class="footer-description">Premium digital tools made accessible to everyone. Our mission is to democratize access to professional-grade tools that help you succeed online.</p>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Tools</h4>
+                <ul class="footer-links">
+                    <li><a href="adsense-readiness-checker.html">AdSense Checker</a></li>
+                    <li><a href="seo-health-checker.html">SEO Checker</a></li>
+                    <li><a href="content-humanizer.html">Content Humanizer</a></li>
+                    <li><a href="low-value-content-analyzer.html">Content Analyzer</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="../blog/index.html">Blog</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-heading">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms & Conditions</a></li>
+                    <li><a href="../disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Mr360ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/low-value-analyzer.js"></script>
+</body>
+</html>
